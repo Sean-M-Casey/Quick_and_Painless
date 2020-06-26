@@ -168,7 +168,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 18731865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92de0994895f18946b7a9b882c2582c9, type: 3}
+  m_Script: {fileID: 11500000, guid: f43a48e5e42434d4a9920ccc0fd374ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
@@ -256,11 +256,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 18731865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5564740046930f94a8a5b9d9ead748f1, type: 3}
+  m_Script: {fileID: 11500000, guid: f2fe6ae88f85f454fb13b3bf211471c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   outlineColor: {r: 1, g: 0, b: 0, a: 1}
-  outlineColorPressed: {r: 0.010703921, g: 1, b: 0, a: 1}
+  outlineColorPressed: {r: 0.053278685, g: 1, b: 0, a: 1}
   interactCheck:
   - {fileID: 1666833046}
 --- !u!1 &147063299
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 457615748}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6bd6c1c6ccb8c445a4f0aaae5e658ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c634b434f36028468dd4e5f3430ef8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
@@ -396,7 +396,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 457615748}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 127bc06f8e14c0e40b5dc3beb3f2c875, type: 3}
+  m_Script: {fileID: 11500000, guid: a18987ca07e20f34bb4da84f1b393105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   polterPad: {fileID: 147063299}
@@ -456,7 +456,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610355005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 658574314}
@@ -1106,7 +1106,7 @@ GameObject:
   - component: {fileID: 1433091743}
   - component: {fileID: 1433091742}
   m_Layer: 5
-  m_Name: Image
+  m_Name: PolterPadUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
