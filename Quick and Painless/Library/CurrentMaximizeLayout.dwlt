@@ -310,9 +310,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.6364262, y: 2.294047, z: -0.7046523}
+    m_Target: {x: 245.86908, y: 68.02641, z: 642.3014}
     speed: 2
-    m_Value: {x: -0.6364262, y: 2.294047, z: -0.7046523}
+    m_Value: {x: 245.86908, y: 68.02641, z: 642.3014}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -358,13 +358,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.121510096, y: 0.665167, z: -0.1109712, w: -0.7283372}
+    m_Target: {x: -0.079725154, y: 0.0005953966, z: -0.000047478767, w: -0.99681795}
     speed: 2
-    m_Value: {x: -0.12151001, y: 0.6651665, z: -0.110971116, w: -0.7283367}
+    m_Value: {x: -0.07972506, y: 0.0005953959, z: -0.00004747871, w: -0.99681675}
   m_Size:
-    m_Target: 11.10566
+    m_Target: 1053.0835
     speed: 2
-    m_Value: 11.10566
+    m_Value: 1053.0835
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -641,7 +641,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300007cb50000dad00400f6d20400949b130008411f0054ea22006e10130000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
