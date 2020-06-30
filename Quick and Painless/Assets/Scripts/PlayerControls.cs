@@ -24,26 +24,26 @@ public class PlayerControls : MonoBehaviour
         rigidBody.AddForce(movement * speed);
         
         //Removes velocity when movement keys are released so that player doesnt continue moving
-        if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.W))
+        if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.W) || Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.W))
         {
             rigidBody.velocity = Vector3.zero;
             rigidBody.angularVelocity = Vector3.zero;
         }
 
        // Movement Animator Triggers
-        if (Input.GetKeyDown(KeyCode.A))
+        if (moveHorizontal < 0)
         {
             LucilleAnim.SetTrigger("Left_Walk");
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (moveHorizontal > 0)
         {
             LucilleAnim.SetTrigger("Right_Walk");
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (moveVertical < 0)
         {
             LucilleAnim.SetTrigger("Down_Walk");
         }
-        else if (Input.GetKeyDown(KeyCode.W))
+        else if(moveVertical > 0)
         {
             LucilleAnim.SetTrigger("Up_Walk");
         }
