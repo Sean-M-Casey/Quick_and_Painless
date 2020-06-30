@@ -7,12 +7,14 @@ public class PlayerControls : MonoBehaviour
     public float speed;
     private Rigidbody rigidBody;
     public Animator LucilleAnim;
+    public GameObject mainCam;
     void Start()
     {
         rigidBody = gameObject.GetComponent<Rigidbody>();    
     }
     void Update()
     {
+        mainCam.transform.position = new Vector3(gameObject.transform.position.x, 3.91f, -13.38f);
         //Getting Direction for Movement
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
