@@ -28,26 +28,26 @@ public class PlayerControls : MonoBehaviour
             rigidBody.angularVelocity = Vector3.zero;
         }
 
-        //Movement Animator Triggers
-        /*if (Input.GetKeyDown(KeyCode.A))
+       // Movement Animator Triggers
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            LucilleAnim.SetTrigger("Left");
+            LucilleAnim.SetTrigger("Left_Walk");
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            LucilleAnim.SetTrigger("Right");
+            LucilleAnim.SetTrigger("Right_Walk");
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            LucilleAnim.SetTrigger("Down");
+            LucilleAnim.SetTrigger("Down_Walk");
         }
         else if (Input.GetKeyDown(KeyCode.W))
         {
-            LucilleAnim.SetTrigger("Up");
+            LucilleAnim.SetTrigger("Up_Walk");
         }
         else
         {
-            LucilleAnim.SetTrigger("Idle");
-        }*/
+            LucilleAnim.SetTrigger("To_Idle");
+        }
     }
 }
