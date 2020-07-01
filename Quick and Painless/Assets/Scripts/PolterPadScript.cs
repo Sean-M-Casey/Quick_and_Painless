@@ -9,6 +9,7 @@ public class PolterPadScript : MonoBehaviour
     public GameObject polterPadUI;
     public UnityEvent triggerTimePause;
     public UnityEvent triggerTimeUnPause;
+    public UnityEvent mouseLock;
     public int ppActive = 0;
     //public Animator triggerPolterPad;
     void Start()
@@ -29,6 +30,7 @@ public class PolterPadScript : MonoBehaviour
                 polterPadUI.SetActive(true);
                 triggerTimeUnPause.Invoke();
                 ppActive--;
+                mouseLock.Invoke();
             }
         }
     }

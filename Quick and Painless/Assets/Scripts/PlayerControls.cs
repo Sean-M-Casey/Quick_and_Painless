@@ -52,4 +52,15 @@ public class PlayerControls : MonoBehaviour
             LucilleAnim.SetTrigger("To_Idle");
         }
     }
+    public void UpdateMouseLock()
+    {
+        if (Cursor.lockState == CursorLockMode.None)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
 }
