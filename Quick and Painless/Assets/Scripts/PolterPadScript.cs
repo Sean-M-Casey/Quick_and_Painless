@@ -37,7 +37,7 @@ public class PolterPadScript : MonoBehaviour
                 mouseLock.Invoke();
             }
         }
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < 9; i++)
         {
             if (i != ppPage)
             {
