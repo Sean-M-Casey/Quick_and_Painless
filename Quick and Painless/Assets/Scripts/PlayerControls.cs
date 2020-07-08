@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
@@ -8,10 +9,12 @@ public class PlayerControls : MonoBehaviour
     private Rigidbody rigidBody;
     public Animator LucilleAnim;
     public GameObject mainCam;
+    public bool mouseLock;
     void Start()
     {
+        mouseLock = false;
+        rigidBody = gameObject.GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
-        rigidBody = gameObject.GetComponent<Rigidbody>();    
     }
     void Update()
     {
@@ -53,17 +56,28 @@ public class PlayerControls : MonoBehaviour
             LucilleAnim.SetTrigger("To_Idle");
         }
     }
+    //event trigger that changes state of mouselock
     public void UpdateMouseLock()
     {
-        if (Cursor.visible == true)
+        if (Cursor.lockState == CursorLockMode.Locked)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            StartCoroutine(Unlock());
         }
         else
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            StartCoroutine(Lock());
         }
+    }
+    private IEnumerator Unlock()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        yield return new WaitForSeconds(0.01f);
+        Cursor.lockState = CursorLockMode.None;
+    }
+    private IEnumerator Lock()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        yield return new WaitForSeconds(0.01f);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

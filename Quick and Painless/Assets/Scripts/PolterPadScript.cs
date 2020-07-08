@@ -7,10 +7,12 @@ public class PolterPadScript : MonoBehaviour
 {
     public GameObject polterPad;
     public GameObject polterPadUI;
+    public GameObject[] ppPages;
     public UnityEvent triggerTimePause;
     public UnityEvent triggerTimeUnPause;
     public UnityEvent mouseLock;
     int ppActive = 0;
+    int ppPage = 0;
     //public Animator triggerPolterPad;
     void Start()
     {
@@ -32,7 +34,23 @@ public class PolterPadScript : MonoBehaviour
                 ppActive--;
                 mouseLock.Invoke();
             }
-        }
+        }    
+    }
+    public void PageUp()
+    {
+        ppPage = 1;
+        ppPages[ppPage - 1].SetActive(false);
+        ppPages[ppPage].SetActive(true);
+    }
+    public void PageDown()
+    {
+        ppPage = 0;
+        ppPages[ppPage + 1].SetActive(false);
+        ppPages[ppPage].SetActive(true);
+    }
+    public void Gallery()
+    {
+
     }
     IEnumerator ActivatePP()
     {
@@ -41,5 +59,6 @@ public class PolterPadScript : MonoBehaviour
         polterPadUI.SetActive(false);
         triggerTimePause.Invoke();
         ppActive++;
+        mouseLock.Invoke();
     }
 }
