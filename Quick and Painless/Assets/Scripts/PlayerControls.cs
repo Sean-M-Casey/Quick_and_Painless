@@ -10,6 +10,7 @@ public class PlayerControls : MonoBehaviour
     public GameObject mainCam;
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         rigidBody = gameObject.GetComponent<Rigidbody>();    
     }
     void Update()
@@ -54,13 +55,15 @@ public class PlayerControls : MonoBehaviour
     }
     public void UpdateMouseLock()
     {
-        if (Cursor.lockState == CursorLockMode.None)
+        if (Cursor.visible == true)
         {
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         else
         {
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }
