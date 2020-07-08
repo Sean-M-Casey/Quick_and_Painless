@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Interactables.cs" />
     <Compile Include="Assets\Scripts\Outline.cs" />
+    <Compile Include="Assets\Scripts\PlayerCameraTrigger.cs" />
     <Compile Include="Assets\Scripts\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\PolterPadScript.cs" />
     <Compile Include="Assets\Scripts\SixtySeconds.cs" />
