@@ -21,7 +21,7 @@ public class PlayerControls : MonoBehaviour
     }
     void Update()
     {
-        mainCam.transform.position = new Vector3(gameObject.transform.position.x, 3.91f, mainCamPosZ);
+        mainCam.transform.position = new Vector3(gameObject.transform.position.x / 2, 3.91f, mainCamPosZ);
         //Getting Direction for Movement
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
