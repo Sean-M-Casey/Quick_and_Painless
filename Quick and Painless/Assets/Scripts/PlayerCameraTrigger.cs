@@ -14,7 +14,7 @@ public class PlayerCameraTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerCam.transform.position = new Vector3(gameObject.transform.position.x, 3.91f, -13.38f);
     }
 
     // Update is called once per frame
@@ -46,11 +46,15 @@ public class PlayerCameraTrigger : MonoBehaviour
                 {
                     gameObject.transform.position = Cameras[1].transform.position;
                     roomNum = 1;
+                    playerCam.transform.position = new Vector3(gameObject.transform.position.x, 3.91f, -13.38f);
+                    player.GetComponent<PlayerControls>().camMoveYes = true;
                 }
                 else if (roomNum == 1)
                 {
                     gameObject.transform.position = Cameras[0].transform.position;
                     roomNum = 0;
+                    playerCam.transform.position = new Vector3(gameObject.transform.position.x, 3.91f, -13.38f);
+                    player.GetComponent<PlayerControls>().camMoveYes = true;
                 }
             }
         }
@@ -62,11 +66,15 @@ public class PlayerCameraTrigger : MonoBehaviour
                 {
                     gameObject.transform.position = Cameras[5].transform.position;
                     roomNum = 2;
+                    playerCam.transform.position = new Vector3(gameObject.transform.position.x, 3.91f, -13.38f);
+                    player.GetComponent<PlayerControls>().camMoveYes = true;
                 }
                 else if (roomNum == 2)
                 {
                     gameObject.transform.position = Cameras[4].transform.position;
                     roomNum = 0;
+                    playerCam.transform.position = new Vector3(gameObject.transform.position.x, 3.91f, -13.38f);
+                    player.GetComponent<PlayerControls>().camMoveYes = true;
                 }
             }
         }
@@ -78,11 +86,55 @@ public class PlayerCameraTrigger : MonoBehaviour
                 {
                     gameObject.transform.position = Cameras[3].transform.position;
                     roomNum = 3;
+                    playerCam.transform.position = new Vector3(gameObject.transform.position.x, 3.91f, -13.38f);
+                    player.GetComponent<PlayerControls>().camMoveYes = true;
                 }
                 else if (roomNum == 3)
                 {
                     gameObject.transform.position = Cameras[2].transform.position;
                     roomNum = 0;
+                    playerCam.transform.position = new Vector3(gameObject.transform.position.x, 3.91f, -13.38f);
+                    player.GetComponent<PlayerControls>().camMoveYes = true;
+                }
+            }
+        }
+        else if (other.name == triggers[3].name)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (roomNum == 1)
+                {
+                    gameObject.transform.position = Cameras[7].transform.position;
+                    roomNum = 4;
+                    playerCam.transform.position = new Vector3(gameObject.transform.position.x, 3.91f, -13.38f);
+                    player.GetComponent<PlayerControls>().camMoveYes = true;
+                }
+                else if (roomNum == 4)
+                {
+                    gameObject.transform.position = Cameras[8].transform.position;
+                    roomNum = 1;
+                    playerCam.transform.position = new Vector3(gameObject.transform.position.x, 3.91f, -13.38f);
+                    player.GetComponent<PlayerControls>().camMoveYes = true;
+                }
+            }
+        }
+        else if (other.name == triggers[4].name)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (roomNum == 3)
+                {
+                    gameObject.transform.position = Cameras[6].transform.position;
+                    roomNum = 4;
+                    playerCam.transform.position = new Vector3(gameObject.transform.position.x, 3.91f, -13.38f);
+                    player.GetComponent<PlayerControls>().camMoveYes = true;
+                }
+                else if (roomNum == 4)
+                {
+                    gameObject.transform.position = Cameras[9].transform.position;
+                    roomNum = 3;
+                    playerCam.transform.position = new Vector3(gameObject.transform.position.x, 3.91f, -13.38f);
+                    player.GetComponent<PlayerControls>().camMoveYes = true;
                 }
             }
         }

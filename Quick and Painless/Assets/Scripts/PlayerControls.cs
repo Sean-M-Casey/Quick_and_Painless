@@ -12,6 +12,7 @@ public class PlayerControls : MonoBehaviour
     public bool mouseLock;
     public float mainCamPosZ;
     public float mainCamDefaultPosZ = 13.38f;
+    public bool camMoveYes = true;
     void Start()
     {
         mouseLock = false;
@@ -21,7 +22,6 @@ public class PlayerControls : MonoBehaviour
     }
     void Update()
     {
-        mainCam.transform.position = new Vector3(gameObject.transform.position.x / 2, 3.91f, mainCamPosZ);
         //Getting Direction for Movement
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
@@ -29,12 +29,18 @@ public class PlayerControls : MonoBehaviour
 
         //Makes Character Move in regards to movement variable
         rigidBody.AddForce(movement * speed);
+        if (camMoveYes == true)
+        {
+            mainCam.GetComponent<Rigidbody>().AddForce((moveHorizontal * speed) / 2, 0, 0);
+        }
         
         //Removes velocity when movement keys are released so that player doesnt continue moving
         if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.W) || Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.W))
         {
             rigidBody.velocity = Vector3.zero;
             rigidBody.angularVelocity = Vector3.zero;
+            mainCam.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            mainCam.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         }
 
        // Movement Animator Triggers
@@ -57,6 +63,24 @@ public class PlayerControls : MonoBehaviour
         else
         {
             LucilleAnim.SetTrigger("To_Idle");
+        }
+    }
+    private void OnCollisionStay(Collision collide)
+    {
+        if (collide.gameObject.tag != "Floor")
+        {
+            rigidBody.velocity = Vector3.zero;
+            rigidBody.angularVelocity = Vector3.zero;
+            mainCam.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            mainCam.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            camMoveYes = false;
+        }
+    }
+    private void OnCollisionExit(Collision collide)
+    {
+        if (collide.gameObject.tag == "Untagged")
+        {
+            camMoveYes = true;
         }
     }
     //event trigger that changes state of mouselock
