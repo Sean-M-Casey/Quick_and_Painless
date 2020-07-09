@@ -10,15 +10,18 @@ public class PlayerControls : MonoBehaviour
     public Animator LucilleAnim;
     public GameObject mainCam;
     public bool mouseLock;
+    public float mainCamPosZ;
+    public float mainCamDefaultPosZ = 13.38f;
     void Start()
     {
         mouseLock = false;
         rigidBody = gameObject.GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+        mainCamPosZ = -13.38f;
     }
     void Update()
     {
-        mainCam.transform.position = new Vector3(gameObject.transform.position.x, 3.91f, -13.38f);
+        mainCam.transform.position = new Vector3(gameObject.transform.position.x, 3.91f, mainCamPosZ);
         //Getting Direction for Movement
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
