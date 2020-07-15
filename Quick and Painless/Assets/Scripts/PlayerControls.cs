@@ -37,32 +37,37 @@ public class PlayerControls : MonoBehaviour
         //Removes velocity when movement keys are released so that player doesnt continue moving
         if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.W) || Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.W))
         {
-            rigidBody.velocity = Vector3.zero;
-            rigidBody.angularVelocity = Vector3.zero;
-            mainCam.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            mainCam.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            StartCoroutine(stopMove());
         }
 
-       // Movement Animator Triggers
-        if (moveHorizontal < 0)
+        // Movement Animator Triggers
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            LucilleAnim.SetTrigger("Left_Walk");
+            LucilleAnim.SetBool("Down_Walk_B", true);
+            LucilleAnim.SetBool("Left_Walk_B", false);
+            LucilleAnim.SetBool("Right_Walk_B", false);
         }
-        else if (moveHorizontal > 0)
+        else if (Input.GetKeyDown(KeyCode.W))
         {
-            LucilleAnim.SetTrigger("Right_Walk");
+            LucilleAnim.SetBool("Up_Walk_B", true);
+            LucilleAnim.SetBool("Left_Walk_B", false);
+            LucilleAnim.SetBool("Right_Walk_B", false);
         }
-        else if (moveVertical < 0)
+        else if (Input.GetKeyDown(KeyCode.A))
         {
-            LucilleAnim.SetTrigger("Down_Walk");
+                LucilleAnim.SetBool("Left_Walk_B", true);
         }
-        else if(moveVertical > 0)
+        else if (Input.GetKeyDown(KeyCode.D))
         {
-            LucilleAnim.SetTrigger("Up_Walk");
+                LucilleAnim.SetBool("Right_Walk_B", true);
         }
-        else
+        else if (moveHorizontal == 0 && moveVertical == 0)
         {
             LucilleAnim.SetTrigger("To_Idle");
+            LucilleAnim.SetBool("Left_Walk_B", false);
+            LucilleAnim.SetBool("Right_Walk_B", false);
+            LucilleAnim.SetBool("Down_Walk_B", false);
+            LucilleAnim.SetBool("Up_Walk_B", false);
         }
     }
     private void OnCollisionStay(Collision collide)
@@ -106,5 +111,13 @@ public class PlayerControls : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         yield return new WaitForSeconds(0.01f);
         Cursor.lockState = CursorLockMode.Locked;
+    }
+    private IEnumerator stopMove()
+    {
+        yield return new WaitForSeconds(0.02f);
+        rigidBody.velocity = Vector3.zero;
+        rigidBody.angularVelocity = Vector3.zero;
+        mainCam.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        mainCam.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
 }

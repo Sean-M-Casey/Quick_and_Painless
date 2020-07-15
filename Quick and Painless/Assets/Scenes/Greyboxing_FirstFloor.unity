@@ -717,57 +717,6 @@ Transform:
   m_Father: {fileID: 236186388}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &138546769 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2511248813080719764, guid: 3648cb3fabaa40b48822e9ba15032859,
-    type: 3}
-  m_PrefabInstance: {fileID: 1574571188}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &138546771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138546769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b279271750b523a49894772b9cd8e655, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cameras: []
-  camRails: []
-  rooms: []
-  triggers: []
-  playerCam: {fileID: 0}
-  player: {fileID: 0}
---- !u!114 &138546772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138546769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2fe6ae88f85f454fb13b3bf211471c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineColor: {r: 0, g: 0, b: 0, a: 0}
-  outlineColorPressed: {r: 0, g: 0, b: 0, a: 0}
-  interactCheck: []
---- !u!114 &138546774 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2511248813080719768, guid: 3648cb3fabaa40b48822e9ba15032859,
-    type: 3}
-  m_PrefabInstance: {fileID: 1574571188}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138546769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f43a48e5e42434d4a9920ccc0fd374ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &202766328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,7 +1317,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20722
+  m_Name: pb_Mesh14678
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3164,7 +3113,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1031614147}
   - component: {fileID: 1031614149}
-  - component: {fileID: 1031614148}
   m_Layer: 0
   m_Name: WorldScriptHolder
   m_TagString: Untagged
@@ -3186,43 +3134,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1031614148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031614146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a18987ca07e20f34bb4da84f1b393105, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  polterPad: {fileID: 0}
-  polterPadUI: {fileID: 0}
-  ppPages: []
-  PageUp: {fileID: 0}
-  PageDown: {fileID: 0}
-  triggerTimePause:
-    m_PersistentCalls:
-      m_Calls: []
-  triggerTimeUnPause:
-    m_PersistentCalls:
-      m_Calls: []
-  mouseLock:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 138546774}
-        m_MethodName: UpdateMouseLock
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1031614149
 MonoBehaviour:
   m_ObjectHideFlags: 0
