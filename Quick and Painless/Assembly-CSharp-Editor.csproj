@@ -122,6 +122,9 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
       <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
@@ -130,9 +133,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -323,11 +323,11 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="AmplifyColorEditor">
-      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/Assets/AmplifyColor/Plugins/Editor/AmplifyColorEditor.dll</HintPath>
-    </Reference>
     <Reference Include="AmplifyColor">
       <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/Assets/AmplifyColor/Plugins/AmplifyColor.dll</HintPath>
+    </Reference>
+    <Reference Include="AmplifyColorEditor">
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/Assets/AmplifyColor/Plugins/Editor/AmplifyColorEditor.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
