@@ -47,21 +47,21 @@ public class PlayerControls : MonoBehaviour
             LucilleAnim.SetBool("Left_Walk_B", false);
             LucilleAnim.SetBool("Right_Walk_B", false);
         }
-        else if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             LucilleAnim.SetBool("Up_Walk_B", true);
             LucilleAnim.SetBool("Left_Walk_B", false);
             LucilleAnim.SetBool("Right_Walk_B", false);
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
                 LucilleAnim.SetBool("Left_Walk_B", true);
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
                 LucilleAnim.SetBool("Right_Walk_B", true);
         }
-        else if (moveHorizontal == 0 && moveVertical == 0)
+        if (moveHorizontal == 0 && moveVertical == 0)
         {
             LucilleAnim.SetTrigger("To_Idle");
             LucilleAnim.SetBool("Left_Walk_B", false);
