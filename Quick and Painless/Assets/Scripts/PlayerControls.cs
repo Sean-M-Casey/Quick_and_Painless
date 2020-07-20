@@ -31,7 +31,7 @@ public class PlayerControls : MonoBehaviour
         rigidBody.AddForce(movement * speed);
         if (camMoveYes == true)
         {
-            mainCam.GetComponent<Rigidbody>().AddForce((moveHorizontal * speed) / 2, 0, 0);
+            mainCam.GetComponent<Rigidbody>().AddForce((moveHorizontal * speed) - ((moveHorizontal * speed) / 4), 0, 0);
         }
         
         //Removes velocity when movement keys are released so that player doesnt continue moving
