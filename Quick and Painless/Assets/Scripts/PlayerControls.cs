@@ -69,6 +69,35 @@ public class PlayerControls : MonoBehaviour
             LucilleAnim.SetBool("Down_Walk_B", false);
             LucilleAnim.SetBool("Up_Walk_B", false);
         }
+
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            LucilleAnim.SetBool("Left_Walk_B", false);
+            LucilleAnim.SetBool("Right_Walk_B", false);
+            LucilleAnim.SetBool("Down_Walk_B", false);
+            LucilleAnim.SetBool("Up_Walk_B", false);
+        }
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            LucilleAnim.SetBool("Left_Walk_B", false);
+            LucilleAnim.SetBool("Right_Walk_B", false);
+            LucilleAnim.SetBool("Down_Walk_B", false);
+            LucilleAnim.SetBool("Up_Walk_B", false);
+        }
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            LucilleAnim.SetBool("Left_Walk_B", false);
+            LucilleAnim.SetBool("Right_Walk_B", false);
+            LucilleAnim.SetBool("Down_Walk_B", false);
+            LucilleAnim.SetBool("Up_Walk_B", false);
+        }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            LucilleAnim.SetBool("Left_Walk_B", false);
+            LucilleAnim.SetBool("Right_Walk_B", false);
+            LucilleAnim.SetBool("Down_Walk_B", false);
+            LucilleAnim.SetBool("Up_Walk_B", false);
+        }
     }
     private void OnCollisionStay(Collision collide)
     {

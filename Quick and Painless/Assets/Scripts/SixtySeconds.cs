@@ -7,7 +7,6 @@ public class SixtySeconds : MonoBehaviour
 {
     public Animator timer;
     int timerStore = 60;
-    public Text timerDisplay;
     public bool timerPause = false;
     public bool timeRestart = false;
     bool coroutineOn = true;
@@ -35,7 +34,6 @@ public class SixtySeconds : MonoBehaviour
         for (int timeLeft = timerStore; timeLeft >= 0; timeLeft--)
         {
             //displays current timeLeft on UI
-            timerDisplay.text = timeLeft.ToString();
             yield return new WaitForSeconds(1f);
             //Starts Alert Animation if timer gets below 10
             if (timeLeft <= 10)
