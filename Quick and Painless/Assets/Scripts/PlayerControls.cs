@@ -13,6 +13,7 @@ public class PlayerControls : MonoBehaviour
     public float mainCamPosZ;
     public float mainCamDefaultPosZ = 13.38f;
     public bool camMoveYes = true;
+    public bool wallFlashTrigger;
     bool canMove;
     void Start()
     {
@@ -51,62 +52,72 @@ public class PlayerControls : MonoBehaviour
         }
 
         // Movement Animator Triggers
-        if (Input.GetKeyDown(KeyCode.S))
+        if (canMove)
         {
-            LucilleAnim.SetBool("Down_Walk_B", true);
-            LucilleAnim.SetBool("Left_Walk_B", false);
-            LucilleAnim.SetBool("Right_Walk_B", false);
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            LucilleAnim.SetBool("Up_Walk_B", true);
-            LucilleAnim.SetBool("Left_Walk_B", false);
-            LucilleAnim.SetBool("Right_Walk_B", false);
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                LucilleAnim.SetBool("Down_Walk_B", true);
+                LucilleAnim.SetBool("Left_Walk_B", false);
+                LucilleAnim.SetBool("Right_Walk_B", false);
+            }
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                LucilleAnim.SetBool("Up_Walk_B", true);
+                LucilleAnim.SetBool("Left_Walk_B", false);
+                LucilleAnim.SetBool("Right_Walk_B", false);
+            }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
                 LucilleAnim.SetBool("Left_Walk_B", true);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
                 LucilleAnim.SetBool("Right_Walk_B", true);
-        }
-        if (moveHorizontal == 0 && moveVertical == 0)
-        {
-            LucilleAnim.SetTrigger("To_Idle");
-            LucilleAnim.SetBool("Left_Walk_B", false);
-            LucilleAnim.SetBool("Right_Walk_B", false);
-            LucilleAnim.SetBool("Down_Walk_B", false);
-            LucilleAnim.SetBool("Up_Walk_B", false);
-        }
+            }
+            if (moveHorizontal == 0 && moveVertical == 0)
+            {
+                LucilleAnim.SetTrigger("To_Idle");
+                LucilleAnim.SetBool("Left_Walk_B", false);
+                LucilleAnim.SetBool("Right_Walk_B", false);
+                LucilleAnim.SetBool("Down_Walk_B", false);
+                LucilleAnim.SetBool("Up_Walk_B", false);
+            }
 
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-            LucilleAnim.SetBool("Left_Walk_B", false);
-            LucilleAnim.SetBool("Right_Walk_B", false);
-            LucilleAnim.SetBool("Down_Walk_B", false);
-            LucilleAnim.SetBool("Up_Walk_B", false);
+            if (Input.GetKeyUp(KeyCode.W))
+            {
+                LucilleAnim.SetBool("Left_Walk_B", false);
+                LucilleAnim.SetBool("Right_Walk_B", false);
+                LucilleAnim.SetBool("Down_Walk_B", false);
+                LucilleAnim.SetBool("Up_Walk_B", false);
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                LucilleAnim.SetBool("Left_Walk_B", false);
+                LucilleAnim.SetBool("Right_Walk_B", false);
+                LucilleAnim.SetBool("Down_Walk_B", false);
+                LucilleAnim.SetBool("Up_Walk_B", false);
+            }
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                LucilleAnim.SetBool("Left_Walk_B", false);
+                LucilleAnim.SetBool("Right_Walk_B", false);
+                LucilleAnim.SetBool("Down_Walk_B", false);
+                LucilleAnim.SetBool("Up_Walk_B", false);
+            }
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                LucilleAnim.SetBool("Left_Walk_B", false);
+                LucilleAnim.SetBool("Right_Walk_B", false);
+                LucilleAnim.SetBool("Down_Walk_B", false);
+                LucilleAnim.SetBool("Up_Walk_B", false);
+            }
         }
-        if (Input.GetKeyUp(KeyCode.S))
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Wall__Prompt_Trigger")
         {
-            LucilleAnim.SetBool("Left_Walk_B", false);
-            LucilleAnim.SetBool("Right_Walk_B", false);
-            LucilleAnim.SetBool("Down_Walk_B", false);
-            LucilleAnim.SetBool("Up_Walk_B", false);
-        }
-        if (Input.GetKeyUp(KeyCode.A))
-        {
-            LucilleAnim.SetBool("Left_Walk_B", false);
-            LucilleAnim.SetBool("Right_Walk_B", false);
-            LucilleAnim.SetBool("Down_Walk_B", false);
-            LucilleAnim.SetBool("Up_Walk_B", false);
-        }
-        if (Input.GetKeyUp(KeyCode.D))
-        {
-            LucilleAnim.SetBool("Left_Walk_B", false);
-            LucilleAnim.SetBool("Right_Walk_B", false);
-            LucilleAnim.SetBool("Down_Walk_B", false);
-            LucilleAnim.SetBool("Up_Walk_B", false);
+            wallFlashTrigger = true;
         }
     }
     private void OnCollisionStay(Collision collide)

@@ -78,6 +78,7 @@
     <Compile Include="Assets\AmplifyColor\Plugins\Runtime\VolumeEffectsFlags.cs" />
     <Compile Include="Assets\Scripts\CutScene1.cs" />
     <Compile Include="Assets\Scripts\DoorScripts.cs" />
+    <Compile Include="Assets\Scripts\HoldKeyForSeconds.cs" />
     <Compile Include="Assets\Scripts\Interactables.cs" />
     <Compile Include="Assets\Scripts\Outline.cs" />
     <Compile Include="Assets\Scripts\PlayerCameraTrigger.cs" />

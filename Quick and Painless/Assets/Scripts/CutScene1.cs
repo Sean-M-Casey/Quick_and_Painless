@@ -5,15 +5,17 @@ using UnityEngine.Events;
 
 public class CutScene1 : MonoBehaviour
 {
+    public GameObject player;
     public GameObject textBox;
     public GameObject textEndIcon;
+    public GameObject wasdSprites;
     public UnityEvent canMoveEvent;
     TextWritingScript textScript;
     int textTracker = 0;
-    public int cutsceneOneSentenceLimit;
     // Start is called before the first frame update
     void Start()
     {
+        wasdSprites.SetActive(false);
         textScript = gameObject.GetComponent<TextWritingScript>();
         textBox.SetActive(false);
         StartCoroutine(Cutscene1());
@@ -26,10 +28,11 @@ public class CutScene1 : MonoBehaviour
             StartCoroutine(Cutscene1());
             textScript.chatText.text = "";
             textScript.letterDelay = textScript.letterDelayDefault;
-            if (textTracker == textScript.sentences.Length)
+            if (textTracker == 16)
             {
                 textBox.SetActive(false);
                 canMoveEvent.Invoke();
+                StartCoroutine(WASDShow());
             }
             else
             {
@@ -40,6 +43,10 @@ public class CutScene1 : MonoBehaviour
         {
             textScript.letterDelay = 0;
         }
+        if (wasdSprites.activeSelf == true)
+        {
+            wasdSprites.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z);
+        }
     }
     IEnumerator Cutscene1()
     {
@@ -49,6 +56,17 @@ public class CutScene1 : MonoBehaviour
         if (textTracker != textScript.sentences.Length)
         {
             textBox.SetActive(true);
+        }
+    }
+    IEnumerator WASDShow()
+    {
+        wasdSprites.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        wasdSprites.SetActive(false);
+        GameObject.Find("Kitchen_Wall 1").GetComponent<Animator>().SetTrigger("Wall_Flash");
+        if (player.GetComponent<PlayerControls>().wallFlashTrigger == true)
+        {
+            
         }
     }
 }
