@@ -88,7 +88,7 @@ public class DoorScripts : MonoBehaviour
             {
                 player.transform.position = dining_foyer.transform.position;
                 inRoom = "Dining";
-                main_camera.transform.position = new Vector3(cam_pos_kitchen.transform.position.x, cam_pos_kitchen.transform.position.y, cam_pos_kitchen.transform.position.z);
+                main_camera.transform.position = new Vector3(cam_pos_foyer_dining.transform.position.x + 30, cam_pos_foyer_dining.transform.position.y, cam_pos_foyer_dining.transform.position.z);
             }
         }
         if (other.name == foyer_living.name)

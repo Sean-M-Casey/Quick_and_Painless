@@ -13,6 +13,7 @@ public class PlayerControls : MonoBehaviour
     public float mainCamPosZ;
     public float mainCamDefaultPosZ = 13.38f;
     public bool camMoveYes = true;
+    bool canMove;
     void Start()
     {
         mouseLock = false;
@@ -27,8 +28,17 @@ public class PlayerControls : MonoBehaviour
         float moveVertical = Input.GetAxisRaw("Vertical");
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-        //Makes Character Move in regards to movement variable
-        rigidBody.AddForce(movement * speed);
+        if (canMove)
+        {
+            //Makes Character Move in regards to movement variable
+            rigidBody.AddForce(movement * speed);
+            camMoveYes = true;
+        }
+        else if (!canMove)
+        {
+            camMoveYes = false;
+        }
+        
         if (camMoveYes == true)
         {
             mainCam.GetComponent<Rigidbody>().AddForce((moveHorizontal * speed) - ((moveHorizontal * speed) / 4), 0, 0);
@@ -148,5 +158,9 @@ public class PlayerControls : MonoBehaviour
         rigidBody.angularVelocity = Vector3.zero;
         mainCam.GetComponent<Rigidbody>().velocity = Vector3.zero;
         mainCam.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+    }
+    public void canMoveTrigger()
+    {
+        canMove = !canMove;
     }
 }
