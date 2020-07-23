@@ -15,6 +15,7 @@ public class PlayerControls : MonoBehaviour
     public bool camMoveYes = true;
     public bool wallFlashTrigger;
     public bool canMove;
+    bool collisionYes;
     void Start()
     {
         mouseLock = false;
@@ -33,13 +34,15 @@ public class PlayerControls : MonoBehaviour
         {
             //Makes Character Move in regards to movement variable
             rigidBody.AddForce(movement * speed);
-            camMoveYes = true;
+            if (!collisionYes)
+            {
+                camMoveYes = true;
+            }
         }
         else if (!canMove)
         {
             camMoveYes = false;
         }
-        
         if (camMoveYes == true)
         {
             mainCam.GetComponent<Rigidbody>().AddForce((moveHorizontal * speed) - ((moveHorizontal * speed) / 4), 0, 0);
@@ -122,21 +125,16 @@ public class PlayerControls : MonoBehaviour
     }
     private void OnCollisionStay(Collision collide)
     {
-        if (collide.gameObject.tag != "Floor")
-        {
             rigidBody.velocity = Vector3.zero;
             rigidBody.angularVelocity = Vector3.zero;
             mainCam.GetComponent<Rigidbody>().velocity = Vector3.zero;
             mainCam.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             camMoveYes = false;
-        }
+            collisionYes = true;
     }
     private void OnCollisionExit(Collision collide)
     {
-        if (collide.gameObject.tag == "Untagged")
-        {
             camMoveYes = true;
-        }
     }
     //event trigger that changes state of mouselock
     public void UpdateMouseLock()
@@ -172,6 +170,13 @@ public class PlayerControls : MonoBehaviour
     }
     public void canMoveTrigger()
     {
-        canMove = !canMove;
+        if (canMove == true)
+        {
+            canMove = false;
+        }
+        else
+        {
+            canMove = true;
+        }
     }
 }

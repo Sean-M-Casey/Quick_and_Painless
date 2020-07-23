@@ -14,6 +14,7 @@ public class CutScene1 : MonoBehaviour
     public UnityEvent unpauseTimer;
     TextWritingScript textScript;
     int textTracker = 0;
+    bool finishCutscene;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,23 +25,24 @@ public class CutScene1 : MonoBehaviour
     }
     void Update()
     {
+        if (textTracker == 16)
+        {
+            unpauseTimer.Invoke();
+            textBox.SetActive(false);
+            canMoveEvent.Invoke();
+            StartCoroutine(WASDShow());
+            textTracker++;
+        }
+        else if (textTracker < 16)
+        {
+            textBox.SetActive(true);
+        }
         if (Input.GetKeyDown(KeyCode.Mouse0) && textEndIcon.activeSelf == true)
         {
             textTracker++;
             StartCoroutine(Cutscene1());
             textScript.chatText.text = "";
-            textScript.letterDelay = textScript.letterDelayDefault;
-            if (textTracker == 16)
-            {
-                unpauseTimer.Invoke();
-                textBox.SetActive(false);
-                canMoveEvent.Invoke();
-                StartCoroutine(WASDShow());
-            }
-            else
-            {
-                textBox.SetActive(true);
-            }
+            textScript.letterDelay = textScript.letterDelayDefault;           
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0) && textBox.activeSelf == true)
         {
@@ -56,7 +58,7 @@ public class CutScene1 : MonoBehaviour
         yield return new WaitForSeconds(0.07f);
         textScript.triggerName(0);
         textScript.triggerText(textTracker);
-        if (textTracker != textScript.sentences.Length)
+        if (textTracker != 16)
         {
             textBox.SetActive(true);
             pauseTimer.Invoke();

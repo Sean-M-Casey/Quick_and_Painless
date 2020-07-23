@@ -15,6 +15,7 @@ public class PolterPadScript : MonoBehaviour
     public UnityEvent triggerTimePause;
     public UnityEvent triggerTimeUnPause;
     public UnityEvent mouseLock;
+    public GameObject textBox;
     int ppActive = 0;
     int ppPage = 0;
     //public Animator triggerPolterPad;
@@ -24,21 +25,24 @@ public class PolterPadScript : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (!textBox.activeSelf)
         {
-            if (ppActive == 0)
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
-                StartCoroutine(ActivatePP());
-            }
-            if (ppActive == 1)
-            {
-                timer.enabled = true;
-                timerAlert.enabled = true;
-                polterPad.SetActive(false);
-                polterPadUI.SetActive(true);
-                triggerTimeUnPause.Invoke();
-                ppActive--;
-                mouseLock.Invoke();
+                if (ppActive == 0)
+                {
+                    StartCoroutine(ActivatePP());
+                }
+                if (ppActive == 1)
+                {
+                    timer.enabled = true;
+                    timerAlert.enabled = true;
+                    polterPad.SetActive(false);
+                    polterPadUI.SetActive(true);
+                    triggerTimeUnPause.Invoke();
+                    ppActive--;
+                    mouseLock.Invoke();
+                }
             }
         }
         for (int i = 0; i < 9; i++)
