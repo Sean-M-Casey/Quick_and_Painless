@@ -14,7 +14,7 @@ public class PlayerControls : MonoBehaviour
     public float mainCamDefaultPosZ = 13.38f;
     public bool camMoveYes = true;
     public bool wallFlashTrigger;
-    bool canMove;
+    public bool canMove;
     void Start()
     {
         mouseLock = false;

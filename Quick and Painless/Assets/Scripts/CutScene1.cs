@@ -10,6 +10,8 @@ public class CutScene1 : MonoBehaviour
     public GameObject textEndIcon;
     public GameObject wasdSprites;
     public UnityEvent canMoveEvent;
+    public UnityEvent pauseTimer;
+    public UnityEvent unpauseTimer;
     TextWritingScript textScript;
     int textTracker = 0;
     // Start is called before the first frame update
@@ -30,6 +32,7 @@ public class CutScene1 : MonoBehaviour
             textScript.letterDelay = textScript.letterDelayDefault;
             if (textTracker == 16)
             {
+                unpauseTimer.Invoke();
                 textBox.SetActive(false);
                 canMoveEvent.Invoke();
                 StartCoroutine(WASDShow());
@@ -56,6 +59,7 @@ public class CutScene1 : MonoBehaviour
         if (textTracker != textScript.sentences.Length)
         {
             textBox.SetActive(true);
+            pauseTimer.Invoke();
         }
     }
     IEnumerator WASDShow()
@@ -63,10 +67,5 @@ public class CutScene1 : MonoBehaviour
         wasdSprites.SetActive(true);
         yield return new WaitForSeconds(2f);
         wasdSprites.SetActive(false);
-        GameObject.Find("Kitchen_Wall 1").GetComponent<Animator>().SetTrigger("Wall_Flash");
-        if (player.GetComponent<PlayerControls>().wallFlashTrigger == true)
-        {
-            
-        }
     }
 }

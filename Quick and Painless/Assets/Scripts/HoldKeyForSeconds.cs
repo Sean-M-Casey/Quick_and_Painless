@@ -35,7 +35,6 @@ public class HoldKeyForSeconds : MonoBehaviour
                     timer = true;
                     StartCoroutine(KeyHoldTimer());
                 }
-
             }
         }
     }

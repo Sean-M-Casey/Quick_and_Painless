@@ -10,6 +10,8 @@ public class PolterPadScript : MonoBehaviour
     public GameObject[] ppPages;
     public GameObject PageUp;
     public GameObject PageDown;
+    public Animator timer;
+    public Animator timerAlert;
     public UnityEvent triggerTimePause;
     public UnityEvent triggerTimeUnPause;
     public UnityEvent mouseLock;
@@ -30,6 +32,8 @@ public class PolterPadScript : MonoBehaviour
             }
             if (ppActive == 1)
             {
+                timer.enabled = true;
+                timerAlert.enabled = true;
                 polterPad.SetActive(false);
                 polterPadUI.SetActive(true);
                 triggerTimeUnPause.Invoke();
@@ -108,6 +112,8 @@ public class PolterPadScript : MonoBehaviour
     IEnumerator ActivatePP()
     {
         yield return new WaitForSeconds(0.2f);
+        timer.enabled = false;
+        timerAlert.enabled = false;
         polterPad.SetActive(true);
         PageDown.SetActive(false);
         polterPadUI.SetActive(false);

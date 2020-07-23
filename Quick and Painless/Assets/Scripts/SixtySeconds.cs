@@ -6,25 +6,30 @@ using UnityEngine.UI;
 public class SixtySeconds : MonoBehaviour
 {
     public Animator timer;
+    public Animator timerAlert;
     int timerStore = 60;
     public bool timerPause = false;
     public bool timeRestart = false;
     bool coroutineOn = true;
+    IEnumerator co;
     void Start()
     {
-        StartCoroutine(TimerCountdown());
+        co = TimerCountdown();
+        StartCoroutine(co);
     }
     private void Update()
     {
         //unpauses timer and world
         if (timerPause == false)
         {
-            Time.timeScale = 1;
+            timer.enabled = true;
+            timerAlert.enabled = true;
+            StartCoroutine(co);
         }
         //properly restarts the timer coroutine
         if (coroutineOn == false)
         {
-            StartCoroutine(TimerCountdown());
+            StartCoroutine(co);
             coroutineOn = true;
         }
     }
@@ -35,15 +40,13 @@ public class SixtySeconds : MonoBehaviour
         {
             //displays current timeLeft on UI
             yield return new WaitForSeconds(1f);
-            //Starts Alert Animation if timer gets below 10
-            if (timeLeft <= 10)
-            {
-                timer.SetTrigger("Alert");
-            }
             //pauses timer and world
             if (timerPause == true)
             {
-                Time.timeScale = 0;
+                timer.enabled = false;
+                timerAlert.enabled = false;
+                timerStore = timeLeft;
+                StopCoroutine(co);
             }
             //triggers time restart and restarts coroutine
             if (timeRestart == true)
@@ -51,7 +54,7 @@ public class SixtySeconds : MonoBehaviour
                 timerStore = 60;
                 timeRestart = false;
                 coroutineOn = false;
-                StopCoroutine(TimerCountdown());
+                StopCoroutine(co);
             }
         }
     }
