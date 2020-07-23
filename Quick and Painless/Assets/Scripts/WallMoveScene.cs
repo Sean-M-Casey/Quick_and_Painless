@@ -21,9 +21,12 @@ public class WallMoveScene : MonoBehaviour
     bool isColliding;
     bool wallFlashHasRun;
     bool wallCollideFirst;
+    bool wallRunCollideDone;
+    IEnumerator co;
     // Start is called before the first frame update
     void Start()
     {
+        co = WallPrompt1();
         tutPrompts.SetActive(false);
         textScript = GameObject.Find("WorldScriptHolder").GetComponent<TextWritingScript>();
         playerControls = player.GetComponent<PlayerControls>();
@@ -53,13 +56,27 @@ public class WallMoveScene : MonoBehaviour
         {
             wallGlow.GetComponent<Animator>().SetBool("startGlow", false);
         }
-        if (textEndIcon.activeSelf && continueOne)
+        if (textEndIcon.activeSelf)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                textBox.SetActive(false);
-                playerControls.canMove = true;
-                tutPromptText.text = tutPromptMsg[1];
+                if (continueOne)
+                {
+                    textBox.SetActive(false);
+                    playerControls.canMove = true;
+                    tutPromptText.text = tutPromptMsg[1];
+                    StartCoroutine(WallFlash2());
+                }
+                if (textTracker == 17)
+                {
+                    textTracker += 1;
+                    textScript.triggerText(textTracker);
+                }
+                if (textTracker == 18)
+                {
+                    textBox.SetActive(false);
+                    playerControls.canMove = true;
+                }
             }
         }
     }
@@ -81,7 +98,16 @@ public class WallMoveScene : MonoBehaviour
         if (collide.gameObject.name == "Foyer_Wall 1")
         {
             isColliding = true;
-            StartCoroutine(WallPrompt1());
+            StartCoroutine(co);
+        }
+        if (collide.gameObject.name == "Foyer_Wall 3")
+        {
+            if (wallRunCollideDone)
+            {
+                textTracker += 1;
+                textBox.SetActive(true);
+                textScript.triggerText(textTracker);
+            }
         }
     }
     private void OnCollisionExit(Collision collide)
@@ -105,6 +131,13 @@ public class WallMoveScene : MonoBehaviour
                 continueOne = true;
             }
         }
+    }
+    IEnumerator WallFlash2()
+    {
+        GameObject.Find("Foyer_Wall 3").GetComponent<Animator>().SetBool("startGlow", true);
+        yield return new WaitForSeconds(5f);
+        GameObject.Find("Foyer_Wall 3").GetComponent<Animator>().SetBool("startGlow", false);
+        wallRunCollideDone = true;
     }
     IEnumerator WallFlash()
     {

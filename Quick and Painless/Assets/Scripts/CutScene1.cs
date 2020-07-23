@@ -25,13 +25,14 @@ public class CutScene1 : MonoBehaviour
     }
     void Update()
     {
-        if (textTracker == 16)
+        if (textTracker == 16 && !finishCutscene)
         {
             unpauseTimer.Invoke();
             textBox.SetActive(false);
             canMoveEvent.Invoke();
             StartCoroutine(WASDShow());
-            textTracker++;
+            finishCutscene = true;
+            //textTracker++;
         }
         else if (textTracker < 16)
         {

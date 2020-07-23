@@ -37,108 +37,75 @@ public class DoorScripts : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.name == foyer_kitchen.name)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (other.name == foyer_kitchen.name)
             {
                 player.transform.position = kitchen_foyer.transform.position;
                 inRoom = "Kitchen";
                 main_camera.transform.position = new Vector3(cam_pos_kitchen.transform.position.x, cam_pos_kitchen.transform.position.y, cam_pos_kitchen.transform.position.z);
             }
-        }
-        if (other.name == kitchen_foyer.name)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (other.name == kitchen_foyer.name)
             {
                 player.transform.position = foyer_kitchen.transform.position;
                 inRoom = "Foyer";
                 main_camera.transform.position = new Vector3(cam_pos_foyer_dining.transform.position.x + 3, cam_pos_foyer_dining.transform.position.y, cam_pos_foyer_dining.transform.position.z);
             }
-        }
-        if (other.name == kitchen_dining.name)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (other.name == kitchen_dining.name)
             {
                 player.transform.position = dining_kitchen.transform.position;
                 inRoom = "Dining";
                 main_camera.transform.position = new Vector3(player.transform.position.x, cam_pos_foyer_dining.transform.position.y, cam_pos_foyer_dining.transform.position.z);
             }
-        }
-        if (other.name == dining_kitchen.name)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (other.name == dining_kitchen.name)
             {
                 player.transform.position = kitchen_dining.transform.position;
                 inRoom = "Kitchen";
                 main_camera.transform.position = new Vector3(cam_pos_kitchen.transform.position.x, cam_pos_kitchen.transform.position.y, cam_pos_kitchen.transform.position.z);
             }
-        }
-        if (other.name == dining_foyer.name)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (other.name == dining_foyer.name)
             {
                 player.transform.position = foyer_dining.transform.position;
                 inRoom = "Foyer";
                 main_camera.transform.position = new Vector3(cam_pos_foyer_dining.transform.position.x + 3, cam_pos_foyer_dining.transform.position.y, cam_pos_foyer_dining.transform.position.z);
             }
-        }
-        if (other.name == foyer_dining.name)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (other.name == foyer_dining.name)
             {
                 player.transform.position = dining_foyer.transform.position;
                 inRoom = "Dining";
-                main_camera.transform.position = new Vector3(cam_pos_foyer_dining.transform.position.x + 30, cam_pos_foyer_dining.transform.position.y, cam_pos_foyer_dining.transform.position.z);
+                main_camera.transform.position = new Vector3(cam_pos_foyer_dining.transform.position.x + 3, cam_pos_foyer_dining.transform.position.y, cam_pos_foyer_dining.transform.position.z);
             }
-        }
-        if (other.name == foyer_living.name)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (other.name == foyer_living.name)
             {
                 player.transform.position = living_foyer.transform.position;
                 inRoom = "Living";
                 main_camera.transform.position = new Vector3(cam_pos_living.transform.position.x + 2, cam_pos_living.transform.position.y, cam_pos_living.transform.position.z);
             }
-        }
-        if (other.name == living_foyer.name)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (other.name == living_foyer.name)
             {
                 player.transform.position = foyer_living.transform.position;
                 inRoom = "Foyer";
                 main_camera.transform.position = new Vector3(cam_pos_foyer_dining.transform.position.x - 3, cam_pos_foyer_dining.transform.position.y, cam_pos_foyer_dining.transform.position.z);
             }
-        }
-        if (other.name == foyer_master.name)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (other.name == foyer_master.name)
             {
                 player.transform.position = master_foyer.transform.position;
                 inRoom = "Master";
                 main_camera.transform.position = new Vector3(cam_pos_master.transform.position.x + 3, cam_pos_master.transform.position.y, cam_pos_master.transform.position.z);
             }
-        }
-        if (other.name == master_foyer.name)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (other.name == master_foyer.name)
             {
                 player.transform.position = foyer_master.transform.position;
                 inRoom = "Foyer";
                 main_camera.transform.position = new Vector3(cam_pos_foyer_dining.transform.position.x - 3, cam_pos_foyer_dining.transform.position.y, cam_pos_foyer_dining.transform.position.z);
             }
-        }
-        if (other.name == foyer_laundry.name)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (other.name == foyer_laundry.name)
             {
                 player.transform.position = laundry_foyer.transform.position;
                 inRoom = "Laundry";
                 main_camera.transform.position = cam_pos_laundry.transform.position;
             }
-        }
-        if (other.name == laundry_foyer.name)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (other.name == laundry_foyer.name)
             {
                 player.transform.position = foyer_laundry.transform.position;
                 inRoom = "Foyer";
