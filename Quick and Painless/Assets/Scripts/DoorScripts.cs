@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoorScripts : MonoBehaviour
 {
@@ -24,19 +25,31 @@ public class DoorScripts : MonoBehaviour
     public GameObject main_camera;
     public GameObject player;
     public GameObject e_Key;
+    public GameObject tutPrompt;
+    public TextMesh tutText;
     public string inRoom;
     bool eKeyRun;
+    bool tutprompting;
     // Start is called before the first frame update
     void Start()
     {
         e_Key.SetActive(false);
         inRoom = "Foyer";
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    IEnumerator TutPrompt()
+    {
+        tutPrompt.SetActive(true);
+        tutText.text = "Press E to interact with Objects";
+        yield return new WaitForSeconds(2f);
+        tutPrompt.SetActive(false);
+        tutText.text = "";
     }
     private void OnTriggerStay(Collider other)
     {
@@ -53,6 +66,11 @@ public class DoorScripts : MonoBehaviour
                 inRoom = "Kitchen";
                 main_camera.transform.position = new Vector3(cam_pos_kitchen.transform.position.x, cam_pos_kitchen.transform.position.y, cam_pos_kitchen.transform.position.z);
                 e_Key.SetActive(false);
+                if (!tutprompting)
+                {
+                    StartCoroutine(TutPrompt());
+                    tutprompting = true;
+                }
             }
             if (other.name == kitchen_foyer.name)
             {

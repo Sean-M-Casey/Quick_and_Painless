@@ -27,7 +27,7 @@ public class Interactables : MonoBehaviour
         {
             if (interactCheck[i].name == other.name)
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKey(KeyCode.E))
                 {
                     currentObject = interactCheck[i];
                     StartCoroutine(KeyInteract());

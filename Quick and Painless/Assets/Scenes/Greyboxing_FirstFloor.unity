@@ -4244,14 +4244,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374217429}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.9299989, y: -4.37, z: -1.7959999}
+  m_LocalScale: {x: 0.14705703, y: 0.14705701, z: 0.14705703}
   m_Children:
   - {fileID: 1228850500}
   - {fileID: 1726633682}
-  m_Father: {fileID: 436693429}
-  m_RootOrder: 0
+  m_Father: {fileID: 503942127}
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &382831778
 PrefabInstance:
@@ -4786,6 +4786,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 509094402}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &418176679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 418176680}
+  m_Layer: 5
+  m_Name: WilliamSuspectInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &418176680
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418176679}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.4922412, y: 0.34609264, z: 0.43909246}
+  m_Children: []
+  m_Father: {fileID: 1658742833}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 6.153014, y: -1.1767082}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &423983256
 GameObject:
   m_ObjectHideFlags: 0
@@ -5060,7 +5095,9 @@ MonoBehaviour:
   player: {fileID: 1942670072}
   textEndIcon: {fileID: 1246978350}
   tutPromptBox: {fileID: 374217429}
+  williamSuspectInfo: {fileID: 0}
   tutPromptText: {fileID: 1228850501}
+  polterPad: {fileID: 0}
 --- !u!4 &437667211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7994128307818435289, guid: 20eaf6c27ab2c9f4e8720e68660f5f48,
@@ -5895,6 +5932,7 @@ Transform:
   - {fileID: 91554884}
   - {fileID: 1295072788}
   - {fileID: 1259145169}
+  - {fileID: 374217430}
   - {fileID: 436693429}
   m_Father: {fileID: 38139887}
   m_RootOrder: 0
@@ -15632,7 +15670,7 @@ PrefabInstance:
     - target: {fileID: 7994128307818435289, guid: 20eaf6c27ab2c9f4e8720e68660f5f48,
         type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 7994128307818435289, guid: 20eaf6c27ab2c9f4e8720e68660f5f48,
         type: 3}
@@ -20805,7 +20843,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.0315244, y: 2.8893995, z: 2.8893995}
-  m_Children: []
+  m_Children:
+  - {fileID: 418176680}
   m_Father: {fileID: 2065304405}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27242,6 +27281,8 @@ MonoBehaviour:
   main_camera: {fileID: 1715942219}
   player: {fileID: 1942670072}
   e_Key: {fileID: 249068407}
+  tutPrompt: {fileID: 374217429}
+  tutText: {fileID: 1228850501}
   inRoom: 
 --- !u!114 &1942670079
 MonoBehaviour:

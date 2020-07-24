@@ -112,15 +112,15 @@ public class WallMoveScene : MonoBehaviour
         {
             if (!wallCollideComplete)
             {
-                if (wallRunCollideDone)
-                {
+                //if (wallRunCollideDone)
+                //{
                     tutPrompts.SetActive(false);
                     textScript.chatText.text = "";
                     textTracker += 1;
                     textBox.SetActive(true);
                     textScript.triggerText(textTracker);
                     wallCollideComplete = true;
-                }
+                //}
             }
         }
     }

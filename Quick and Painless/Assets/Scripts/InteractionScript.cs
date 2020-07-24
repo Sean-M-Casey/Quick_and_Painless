@@ -35,7 +35,7 @@ public class InteractionScript : MonoBehaviour
                 iCircles[i].GetComponent<Animator>().SetBool("White_Idle", true);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && textEndIcon.activeSelf)
+        if (Input.GetKey(KeyCode.Mouse0) && textEndIcon.activeSelf)
         {
             for (int i = 0; i < iCircles.Length; i++)
             {
@@ -49,7 +49,7 @@ public class InteractionScript : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
         {
             for (int i = 0; i < iCircles.Length; i++)
             {
