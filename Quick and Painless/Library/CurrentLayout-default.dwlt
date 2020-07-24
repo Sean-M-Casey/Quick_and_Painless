@@ -116,10 +116,14 @@ MonoBehaviour:
   m_MaxSize: {x: 16006, y: 14042}
   vertical: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 1013
 =======
   controlID: 1330
 >>>>>>> parent of ed9a3610... Attempt at a third and last final push.
+=======
+  controlID: 1013
+>>>>>>> parent of aa2cb50d... Safety prototype push
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,10 +149,14 @@ MonoBehaviour:
   m_MaxSize: {x: 12005, y: 14042}
   vertical: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 1014
 =======
   controlID: 1331
 >>>>>>> parent of ed9a3610... Attempt at a third and last final push.
+=======
+  controlID: 1014
+>>>>>>> parent of aa2cb50d... Safety prototype push
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -175,10 +183,14 @@ MonoBehaviour:
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 1015
 =======
   controlID: 1332
 >>>>>>> parent of ed9a3610... Attempt at a third and last final push.
+=======
+  controlID: 1015
+>>>>>>> parent of aa2cb50d... Safety prototype push
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -435,10 +447,14 @@ MonoBehaviour:
       m_SelectedIDs: 
       m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_ExpandedIDs: 52fbffff
 =======
       m_ExpandedIDs: 64e2fdff129f0000c0a200000ea40000
 >>>>>>> parent of ed9a3610... Attempt at a third and last final push.
+=======
+      m_ExpandedIDs: 52fbffff
+>>>>>>> parent of aa2cb50d... Safety prototype push
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -493,11 +509,12 @@ MonoBehaviour:
   m_Gizmos: 1
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 1
+  m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_Target: {x: 3.2069066, y: 16.574673, z: -8.731417}
     speed: 2
@@ -507,6 +524,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 250.37569, y: 307.18454, z: -181.90646}
 >>>>>>> parent of ed9a3610... Attempt at a third and last final push.
+=======
+    m_Target: {x: 3.2069066, y: 16.574673, z: -8.731417}
+    speed: 2
+    m_Value: {x: 3.2069066, y: 16.574673, z: -8.731417}
+>>>>>>> parent of aa2cb50d... Safety prototype push
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -534,7 +556,7 @@ MonoBehaviour:
       m_Size: {x: 0, y: 0}
     yGrid:
       m_Fade:
-        m_Target: 0
+        m_Target: 1
         speed: 2
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
@@ -542,7 +564,7 @@ MonoBehaviour:
       m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
-        m_Target: 1
+        m_Target: 0
         speed: 2
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
@@ -553,6 +575,7 @@ MonoBehaviour:
     m_gridOpacity: 0.5
   m_Rotation:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 0.33990657, y: 0.0014096021, z: -0.00048659212, w: 0.94048136}
     speed: 2
     m_Value: {x: -0.33990657, y: -0.001409602, z: 0.0004865921, w: -0.9404813}
@@ -562,17 +585,26 @@ MonoBehaviour:
     m_Value: 25.300325
 =======
     m_Target: {x: 0, y: 0, z: 0, w: 1}
+=======
+    m_Target: {x: 0.33990657, y: 0.0014096021, z: -0.00048659212, w: 0.94048136}
+>>>>>>> parent of aa2cb50d... Safety prototype push
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 1}
+    m_Value: {x: -0.33990657, y: -0.001409602, z: 0.0004865921, w: -0.9404813}
   m_Size:
+<<<<<<< HEAD
     m_Target: 344.79892
     speed: 2
     m_Value: 329.9511
 >>>>>>> parent of ed9a3610... Attempt at a third and last final push.
-  m_Ortho:
-    m_Target: 1
+=======
+    m_Target: 25.300325
     speed: 2
-    m_Value: 1
+    m_Value: 25.300325
+>>>>>>> parent of aa2cb50d... Safety prototype push
+  m_Ortho:
+    m_Target: 0
+    speed: 2
+    m_Value: 0
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -893,11 +925,15 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of aa2cb50d... Safety prototype push
     - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
   - Assets/Scripts
+<<<<<<< HEAD
 =======
     - Assets/Sprites
   m_ViewMode: 1
@@ -905,22 +941,30 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Sprites
 >>>>>>> parent of ed9a3610... Attempt at a third and last final push.
+=======
+>>>>>>> parent of aa2cb50d... Safety prototype push
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\Quick_and_Painless\Quick and Painless
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of aa2cb50d... Safety prototype push
     scrollPos: {x: 0, y: 79}
     m_SelectedIDs: b6490000
     m_LastClickedID: 18870
     m_ExpandedIDs: 00000000984800009a4800009c4800009e480000a048000000ca9a3b
+<<<<<<< HEAD
 =======
     scrollPos: {x: 0, y: 112}
     m_SelectedIDs: 30a70000
     m_LastClickedID: 42800
     m_ExpandedIDs: 000000002ea7000030a7000032a7000034a7000036a7000000ca9a3b
 >>>>>>> parent of ed9a3610... Attempt at a third and last final push.
+=======
+>>>>>>> parent of aa2cb50d... Safety prototype push
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -949,10 +993,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000984800009a4800009c4800009e480000a048000000ca9a3b
 =======
     m_ExpandedIDs: 000000002ea7000030a7000032a7000034a7000036a7000000ca9a3b
 >>>>>>> parent of ed9a3610... Attempt at a third and last final push.
+=======
+    m_ExpandedIDs: 00000000984800009a4800009c4800009e480000a048000000ca9a3b
+>>>>>>> parent of aa2cb50d... Safety prototype push
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -981,9 +1029,12 @@ MonoBehaviour:
     m_LastClickedInstanceID: 0
 <<<<<<< HEAD
     m_HadKeyboardFocusLastEvent: 0
+<<<<<<< HEAD
 =======
     m_HadKeyboardFocusLastEvent: 1
 >>>>>>> parent of ed9a3610... Attempt at a third and last final push.
+=======
+>>>>>>> parent of aa2cb50d... Safety prototype push
     m_ExpandedInstanceIDs: c6230000868a000042a90000b0580000b2580000b458000066ba000082fc00009a5a00003ec6000034f2000046f2000000330100aea00000863f0100706600007866000074660000ba4800008a660000005f0000a2460000f23f000058a900004eb00000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1080,10 +1131,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_MinSize: {x: 133, y: 30}
 =======
   m_MinSize: {x: 136, y: 30}
 >>>>>>> parent of ed9a3610... Attempt at a third and last final push.
+=======
+  m_MinSize: {x: 133, y: 30}
+>>>>>>> parent of aa2cb50d... Safety prototype push
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: ProBuilder
