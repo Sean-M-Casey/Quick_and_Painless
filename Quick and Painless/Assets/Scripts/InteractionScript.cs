@@ -11,6 +11,8 @@ public class InteractionScript : MonoBehaviour
     public GameObject textEndIcon;
     public GameObject player;
     int arrayTracker;
+    bool eDown;
+    bool mouseDown;
     void Start()
     {
         textScript = GameObject.Find("WorldScriptHolder").GetComponent<TextWritingScript>();
@@ -23,7 +25,22 @@ public class InteractionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            eDown = true;
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            eDown = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse0) && textEndIcon.activeSelf)
+        {
+            mouseDown = true;
+        }
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            mouseDown = false;
+        }
     }
     private void OnTriggerStay(Collider other)
     {
@@ -35,7 +52,7 @@ public class InteractionScript : MonoBehaviour
                 iCircles[i].GetComponent<Animator>().SetBool("White_Idle", true);
             }
         }
-        if (Input.GetKey(KeyCode.Mouse0) && textEndIcon.activeSelf)
+        if (mouseDown)
         {
             for (int i = 0; i < iCircles.Length; i++)
             {
@@ -45,11 +62,12 @@ public class InteractionScript : MonoBehaviour
                     textScript.chatText.text = "";
                     iCircles[i].GetComponent<Animator>().SetBool("White_FadeOut", true);
                     arrayTracker = i;
+                    mouseDown = false;
                     StartCoroutine(TurnOffAfterAnim());
                 }
             }
         }
-        if (Input.GetKey(KeyCode.E))
+        if (eDown)
         {
             for (int i = 0; i < iCircles.Length; i++)
             {
@@ -59,6 +77,7 @@ public class InteractionScript : MonoBehaviour
                     textBox.SetActive(true);
                     textScript.triggerText(iNums[i]);
                     iCircles[i].GetComponent<Animator>().SetBool("White_ClickGreen", true);
+                    eDown = false;
                
                 }
             }
