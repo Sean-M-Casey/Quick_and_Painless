@@ -27,6 +27,8 @@ public class OpenPolterDialogue : MonoBehaviour
         {
             tutPromptBox.SetActive(false);
             tutPromptText.text = "";
+            polterPad.SetTrigger("");
+            williamSuspectInfo.SetActive(true);
         }
     }
     private void OnTriggerStay(Collider other)
@@ -43,8 +45,6 @@ public class OpenPolterDialogue : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.Mouse0))
                 {
-                    polterPad.SetTrigger("");
-                    williamSuspectInfo.SetActive(true);
                     StartCoroutine(Dialogue());
                     startDialogue = false;
                 }
