@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":3.20690655708313,"y":16.57467269897461,"z":-8.731416702270508},"rotation":{"x":0.33990657329559328,"y":0.0014096021186560393,"z":-0.0004865921218879521,"w":0.9404813647270203},"size":25.300325393676759,"orthographic":false}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":245.37893676757813,"y":308.5123596191406,"z":-183.39166259765626},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":344.7989196777344,"orthographic":true}
+>>>>>>> parent of ed9a3610... Attempt at a third and last final push.
