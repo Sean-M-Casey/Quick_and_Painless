@@ -17,7 +17,7 @@ public class TextWritingScript : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        if (chatText.text.Length == sentences[arrayTracker].Length)
+        if (chatText.text.Length >= sentences[arrayTracker].Length)
         {
             textEndIcon.SetActive(true);
         }
@@ -33,15 +33,15 @@ public class TextWritingScript : MonoBehaviour
     public void triggerText(int arrayNum)
     {
         message = sentences[arrayNum];
-        StartCoroutine(TypeText());
         arrayTracker = arrayNum;
+        StartCoroutine(TypeText());
     }
     IEnumerator TypeText()
     {
-        foreach (char letter in message.ToCharArray())
-        {
-            chatText.text += letter;
-            yield return new WaitForSeconds(letterDelay);
-        }
+            foreach (char letter in message.ToCharArray())
+            {
+                chatText.text += letter;
+                yield return new WaitForSeconds(letterDelay);
+            }
     }
 }

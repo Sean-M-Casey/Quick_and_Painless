@@ -60,7 +60,7 @@ public class WallMoveScene : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                if (continueOne)
+                if (continueOne && textTracker < 17)
                 {
                     textBox.SetActive(false);
                     playerControls.canMove = true;
@@ -69,10 +69,12 @@ public class WallMoveScene : MonoBehaviour
                 }
                 if (textTracker == 17)
                 {
+                    textBox.SetActive(true);
+                    textScript.chatText.text = "";
                     textTracker += 1;
                     textScript.triggerText(textTracker);
                 }
-                if (textTracker == 18)
+                if (textTracker == 18 && textScript.chatText.text.Length == textScript.sentences[textTracker].Length)
                 {
                     textBox.SetActive(false);
                     playerControls.canMove = true;
@@ -104,6 +106,8 @@ public class WallMoveScene : MonoBehaviour
         {
             if (wallRunCollideDone)
             {
+                tutPrompts.SetActive(false);
+                textScript.chatText.text = "";
                 textTracker += 1;
                 textBox.SetActive(true);
                 textScript.triggerText(textTracker);
@@ -122,13 +126,14 @@ public class WallMoveScene : MonoBehaviour
         yield return new WaitForSeconds(5f);
         if (!continueOne)
         {
-            tutPromptText.text = "";
             if (isColliding)
             {
+                continueOne = true;
                 playerControls.canMove = false;
                 textBox.SetActive(true);
+                textScript.chatText.text = "";
+                Debug.Log("test");
                 textScript.triggerText(textTracker);
-                continueOne = true;
             }
         }
     }

@@ -27,6 +27,7 @@ public class CutScene1 : MonoBehaviour
     {
         if (textTracker == 16 && !finishCutscene)
         {
+            textScript.chatText.text = "";
             unpauseTimer.Invoke();
             textBox.SetActive(false);
             canMoveEvent.Invoke();
@@ -38,7 +39,7 @@ public class CutScene1 : MonoBehaviour
         {
             textBox.SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && textEndIcon.activeSelf == true)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && textEndIcon.activeSelf == true && textTracker <= 15)
         {
             textTracker++;
             StartCoroutine(Cutscene1());
@@ -57,13 +58,13 @@ public class CutScene1 : MonoBehaviour
     IEnumerator Cutscene1()
     {
         yield return new WaitForSeconds(0.07f);
-        textScript.triggerName(0);
-        textScript.triggerText(textTracker);
-        if (textTracker != 16)
+        if (textTracker < 16)
         {
             textBox.SetActive(true);
             pauseTimer.Invoke();
         }
+        textScript.triggerName(0);
+        textScript.triggerText(textTracker);
     }
     IEnumerator WASDShow()
     {
