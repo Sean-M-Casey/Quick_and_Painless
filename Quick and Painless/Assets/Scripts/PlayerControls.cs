@@ -168,15 +168,4 @@ public class PlayerControls : MonoBehaviour
         mainCam.GetComponent<Rigidbody>().velocity = Vector3.zero;
         mainCam.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
-    public void canMoveTrigger()
-    {
-        if (canMove == true)
-        {
-            canMove = false;
-        }
-        else
-        {
-            canMove = true;
-        }
-    }
 }

@@ -22,10 +22,13 @@ public class WallMoveScene : MonoBehaviour
     bool wallFlashHasRun;
     bool wallCollideFirst;
     bool wallRunCollideDone;
+    bool wallCollideComplete;
+    GameObject tutPrompt2;
     IEnumerator co;
     // Start is called before the first frame update
     void Start()
     {
+        tutPrompt2 = GameObject.Find("TutPromptBox2");
         co = WallPrompt1();
         tutPrompts.SetActive(false);
         textScript = GameObject.Find("WorldScriptHolder").GetComponent<TextWritingScript>();
@@ -65,6 +68,8 @@ public class WallMoveScene : MonoBehaviour
                     textBox.SetActive(false);
                     playerControls.canMove = true;
                     tutPromptText.text = tutPromptMsg[1];
+                    GameObject.Find("TutPromptBox").SetActive(false);
+                    tutPrompt2.SetActive(true);
                     StartCoroutine(WallFlash2());
                 }
                 if (textTracker == 17)
@@ -78,6 +83,7 @@ public class WallMoveScene : MonoBehaviour
                 {
                     textBox.SetActive(false);
                     playerControls.canMove = true;
+                    StartCoroutine(DoorFlash());
                 }
             }
         }
@@ -104,13 +110,17 @@ public class WallMoveScene : MonoBehaviour
         }
         if (collide.gameObject.name == "Foyer_Wall 3")
         {
-            if (wallRunCollideDone)
+            if (!wallCollideComplete)
             {
-                tutPrompts.SetActive(false);
-                textScript.chatText.text = "";
-                textTracker += 1;
-                textBox.SetActive(true);
-                textScript.triggerText(textTracker);
+                if (wallRunCollideDone)
+                {
+                    tutPrompts.SetActive(false);
+                    textScript.chatText.text = "";
+                    textTracker += 1;
+                    textBox.SetActive(true);
+                    textScript.triggerText(textTracker);
+                    wallCollideComplete = true;
+                }
             }
         }
     }
@@ -132,10 +142,15 @@ public class WallMoveScene : MonoBehaviour
                 playerControls.canMove = false;
                 textBox.SetActive(true);
                 textScript.chatText.text = "";
-                Debug.Log("test");
                 textScript.triggerText(textTracker);
             }
         }
+    }
+    IEnumerator DoorFlash()
+    {
+        GameObject.Find("Foyer_Door_Kitchen").GetComponent<Animator>().SetBool("startGlow", true);
+        yield return new WaitForSeconds(5f);
+        GameObject.Find("Foyer_Door_Kitchen").GetComponent<Animator>().SetBool("startGlow", false);
     }
     IEnumerator WallFlash2()
     {

@@ -23,11 +23,14 @@ public class DoorScripts : MonoBehaviour
     public GameObject cam_pos_laundry;
     public GameObject main_camera;
     public GameObject player;
+    public GameObject e_Key;
     public string inRoom;
+    bool eKeyRun;
     // Start is called before the first frame update
     void Start()
     {
-        
+        e_Key.SetActive(false);
+        inRoom = "Foyer";
     }
 
     // Update is called once per frame
@@ -37,6 +40,11 @@ public class DoorScripts : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
+        if (other.name == foyer_kitchen.name && !eKeyRun)
+        {
+            e_Key.SetActive(true);
+            eKeyRun = true;
+        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (other.name == foyer_kitchen.name)
@@ -44,6 +52,7 @@ public class DoorScripts : MonoBehaviour
                 player.transform.position = kitchen_foyer.transform.position;
                 inRoom = "Kitchen";
                 main_camera.transform.position = new Vector3(cam_pos_kitchen.transform.position.x, cam_pos_kitchen.transform.position.y, cam_pos_kitchen.transform.position.z);
+                e_Key.SetActive(false);
             }
             if (other.name == kitchen_foyer.name)
             {

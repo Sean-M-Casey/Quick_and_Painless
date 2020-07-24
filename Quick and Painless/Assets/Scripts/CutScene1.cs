@@ -30,7 +30,6 @@ public class CutScene1 : MonoBehaviour
             textScript.chatText.text = "";
             unpauseTimer.Invoke();
             textBox.SetActive(false);
-            canMoveEvent.Invoke();
             StartCoroutine(WASDShow());
             finishCutscene = true;
             //textTracker++;
@@ -44,7 +43,8 @@ public class CutScene1 : MonoBehaviour
             textTracker++;
             StartCoroutine(Cutscene1());
             textScript.chatText.text = "";
-            textScript.letterDelay = textScript.letterDelayDefault;           
+            textScript.letterDelay = textScript.letterDelayDefault;
+            textScript.letterDelay = 0.05f;
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0) && textBox.activeSelf == true)
         {
@@ -53,6 +53,14 @@ public class CutScene1 : MonoBehaviour
         if (wasdSprites.activeSelf == true)
         {
             wasdSprites.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z);
+        }
+        if (textBox.activeSelf == true)
+        {
+            player.GetComponent<PlayerControls>().canMove = false;
+        }
+        else
+        {
+            player.GetComponent<PlayerControls>().canMove = true;
         }
     }
     IEnumerator Cutscene1()
